@@ -32,3 +32,27 @@ func TestFormatTimeDiff(t *testing.T) {
 		}
 	}
 }
+
+func TestDatetimeStringToTime(t *testing.T) {
+	tz := "Asia/Jakarta"
+	s := "2018-05-22 23:05:47"
+	l, _ := time.LoadLocation(tz)
+	td := time.Date(2018, 5, 22, 23, 05, 47, 0, l)
+	r, _ := DatetimeStringToTime(s, tz)
+
+	if td.String() != r.String() {
+		t.Errorf("DatetimeStringToTime is incorrect, got %v, want %v", r, td)
+	}
+}
+
+func TestDateStringToTime(t *testing.T) {
+	tz := "Asia/Jakarta"
+	s := "2018-05-22"
+	l, _ := time.LoadLocation(tz)
+	td := time.Date(2018, 5, 22, 0, 0, 0, 0, l)
+	r, _ := DateStringToTime(s, tz)
+
+	if td.String() != r.String() {
+		t.Errorf("DateStringToTime is incorrect, got %v, want %v", r, td)
+	}
+}

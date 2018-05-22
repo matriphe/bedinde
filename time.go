@@ -54,3 +54,13 @@ func FormatTimeDiff(diff time.Duration) TimeDiff {
 	res.Hour = hours
 	return res
 }
+
+func DatetimeStringToTime(s string, tz string) (time.Time, error) {
+	loc, _ := time.LoadLocation(tz)
+	return time.ParseInLocation("2006-01-02 15:04:05", s, loc)
+}
+
+func DateStringToTime(s string, tz string) (time.Time, error) {
+	loc, _ := time.LoadLocation(tz)
+	return time.ParseInLocation("2006-01-02", s, loc)
+}

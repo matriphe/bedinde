@@ -52,6 +52,22 @@ d, _ := time.ParseDuration("2h3m4s")
 r := bedinde.FormatTimeDiff(d) // return TimeDiff{Day: 0, Hour: 2, Minute: 3, Second: 4}
 ```
 
+### DateStringToTime
+
+Convert date string to `time.Time`.
+
+```go
+r := bedinde.DateStringToTime("2018-05-22", "Asia/Jakarta") // return 2018-05-22 00:00:00 +0700 WIB
+```
+
+### DatetimeStringToTime
+
+Convert datetime string to `time.Time`.
+
+```go
+r := bedinde.DatetimeStringToTime("2018-05-22 22:40:26", "Asia/Jakarta") // return 2018-05-22 22:40:26 +0700 WIB
+```
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.

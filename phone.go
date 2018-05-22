@@ -1,8 +1,8 @@
 package bedinde
 
 import (
-	"strings"
 	"github.com/nyaruka/phonenumbers"
+	"strings"
 )
 
 func FormatPhone(phone string, lang string) string {
